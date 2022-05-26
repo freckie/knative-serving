@@ -196,6 +196,9 @@ func PodSpecMask(ctx context.Context, in *corev1.PodSpec) *corev1.PodSpec {
 		out.AutomountServiceAccountToken = in.AutomountServiceAccountToken
 	}
 
+	// @freckie: Extra allowed fields
+	out.HostIPC = in.HostIPC
+
 	// Feature fields
 	if cfg.Features.PodSpecAffinity != config.Disabled {
 		out.Affinity = in.Affinity
@@ -242,7 +245,7 @@ func PodSpecMask(ctx context.Context, in *corev1.PodSpec) *corev1.PodSpec {
 	out.NodeName = ""
 	out.HostNetwork = false
 	out.HostPID = false
-	out.HostIPC = false
+	// out.HostIPC = false
 	out.ShareProcessNamespace = nil
 	out.Hostname = ""
 	out.Subdomain = ""

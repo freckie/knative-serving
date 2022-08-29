@@ -4078,6 +4078,7 @@ metadata:
   annotations:
     knative.dev/example-checksum: "433d7e74"
 data:
+  kubernetes.podspec-schedulername: "enabled"
   _example: |-
     ################################
     #                              #
